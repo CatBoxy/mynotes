@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1036487567463",
+    "project_id": "mynotes-flutter-test0",
+    "storage_bucket": "mynotes-flutter-test0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1036487567463:android:aea9a8c08f11df24c9ccc2",
+        "android_client_info": {
+          "package_name": "com.todoapp.mynotes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1036487567463-jfvo809mgeqh2pj3fne9f5da9hn224vg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmHWN8-xtLPIkFaTpkSKisdMqz0BeKOe8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1036487567463-jfvo809mgeqh2pj3fne9f5da9hn224vg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
