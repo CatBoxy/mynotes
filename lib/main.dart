@@ -20,6 +20,7 @@ void main() {
       loginRoute: (context) => const LoginView(),
       registerRoute: (context) => const RegisterView(),
       notesRoute: (context) => const NotesView(),
+      verifyEmailRoute: (context) => const VerifyEmailView(),
     },
   ));
 }
@@ -46,13 +47,6 @@ class HomePage extends StatelessWidget {
             } else {
               return const LoginView();
             }
-          // if (user?.emailVerified ?? false) {
-          //   print(user);
-          //   return const Text('Done');
-          // } else {
-          //   return const VerifyEmailView();
-          // }
-          // return const LoginView();
           default:
             return const CircularProgressIndicator();
         }
@@ -84,8 +78,10 @@ class _NotesViewState extends State<NotesView> {
                 if (shouldLogout) {
                   await FirebaseAuth.instance.signOut();
                   if (!mounted) return;
-                  Navigator.of(context)
-                      .pushNamedAndRemoveUntil(loginRoute, (_) => false);
+                  Navigator.of(context).pushNamedAndRemoveUntil(
+                    loginRoute,
+                    (_) => false,
+                  );
                 }
                 break;
               default:
