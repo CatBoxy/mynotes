@@ -14,13 +14,22 @@ class NotesService {
 
   List<DatabaseNote> _notes = [];
 
+  // Singleton creation
   static final NotesService _shared = NotesService._sharedInstance();
   // private initializer
-  NotesService._sharedInstance();
+  NotesService._sharedInstance() {
+    // populate broadcast controller with default values
+    _notesStreamController = StreamController<List<DatabaseNote>>.broadcast(
+      // gets called whenever a new listener subscribes
+      onListen: () {
+        _notesStreamController.sink.add(_notes);
+      },
+    );
+  }
+
   factory NotesService() => _shared;
 
-  final _notesStreamController =
-      StreamController<List<DatabaseNote>>.broadcast();
+  late final StreamController<List<DatabaseNote>> _notesStreamController;
 
   Stream<List<DatabaseNote>> get allNotes => _notesStreamController.stream;
 
