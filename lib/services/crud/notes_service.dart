@@ -14,7 +14,7 @@ class NotesService {
 
   List<DatabaseNote> _notes = [];
 
-  // Singleton creation
+  // Singleton creation, returns the same instance of its own class
   static final NotesService _shared = NotesService._sharedInstance();
   // private initializer
   NotesService._sharedInstance() {
